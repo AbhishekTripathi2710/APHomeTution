@@ -87,16 +87,25 @@ nav {
     width: 100%;
     padding: 1em 2em;
     position: absolute;
-    top: 0;
+    top: -40px;
     display: flex; 
     align-items: center;
     justify-content: space-between;
     z-index: 2;
 }
 
-.logo img {
-    height: 50px; 
-    width: auto;
+.logo {
+    display: flex;
+    align-items: center; /* Centers the image vertically */
+    justify-content: center;
+    flex-shrink: 0;
+    max-width: 150px;
+}
+
+.logo-img {
+    max-width: 100%; /* Adjust the size to your preference */
+    height: auto; /* Maintains the aspect ratio */
+    /* Optional: space between the logo and navlinks */
 }
 
 /* Mobile Hamburger Button */
@@ -251,11 +260,12 @@ body.menu-active .home-content {
     /* Show the menu when 'show' class is added */
     #nav-links.show {
         display: flex;
+        margin-top: 50px;
     }
 
     /* Push content below the menu when it's visible */
     body.menu-active .home-content {
-        margin-top: 300px; /* Adjust based on your nav height + menu */
+        margin-top: 180px; /* Adjust based on your nav height + menu */
     }
 
     
