@@ -180,11 +180,11 @@ nav ul li a:hover {
 /* Style for the "Call Now" button */
 .btn {
     position: relative;
-    margin:2em;
+    margin:1em;
     background-color: #ffcc33;  /* Yellow background color */
     color: black;     /* Black text */
     border: none;     /* No border */
-    padding: 15px 30px;  /* Padding to make the button bigger */
+    padding: 15px 10px;  /* Padding to make the button bigger */
     font-size: 18px;  /* Font size */
     border-radius: 5px;  /* Rounded corners */
     box-shadow: 0 0 15px 5px rgba(255, 204, 51, 0.4);  /* Glowing yellow shadow */
@@ -274,7 +274,7 @@ body.menu-active .home-content {
         display: none; /* Hide the links by default */
         flex-direction: column; /* Vertical layout for mobile */
         position: fixed; /* Fixed positioning for mobile */
-        top: 60px; /* Adjust based on your header height */
+        top: 30px; /* Adjust based on your header height */
         left: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9); /* Background color */
