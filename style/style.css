@@ -177,21 +177,47 @@ nav ul li a:hover {
 }
 
 
+/* Style for the "Call Now" button */
 .btn {
-    display: inline-block;
-    padding: 0.8em 2em;
-    background-color: #f0a500;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    position: relative; /* Ensures it sits above the overlay */
-    z-index: 2; 
+    position: relative;
+    margin:2em;
+    background-color: #ffcc33;  /* Yellow background color */
+    color: black;     /* Black text */
+    border: none;     /* No border */
+    padding: 15px 30px;  /* Padding to make the button bigger */
+    font-size: 18px;  /* Font size */
+    border-radius: 5px;  /* Rounded corners */
+    box-shadow: 0 0 15px 5px rgba(255, 204, 51, 0.4);  /* Glowing yellow shadow */
+    cursor: pointer;  /* Cursor pointer on hover */
+    z-index: 9999;    /* Ensures the button stays on top of other elements */
+    transition: all 0.3s ease;  /* Smooth transition for all properties */
+    animation: pulse 1.5s infinite;  /* Continuous pulse animation */
 }
 
-.btn:hover {
-    background-color: #ffcc33;
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly enlarged */
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+    }
 }
+
+/* Optional: Add focus styling for accessibility */
+.btn:focus {
+    outline: none;  /* Remove the default outline */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  /* Add a focus outline */
+}
+
+/* Hover tilt effect */
+.btn:hover {
+    transform: translateY(-5px) rotate(5deg);  /* Slight tilt on hover */
+}
+
 
 #nav-links {
     display: flex; /* Display the nav links in a row for desktop */

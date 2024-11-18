@@ -149,7 +149,6 @@ nav ul li a:hover {
 nav ul li a:hover::after {
     width: 100%; /* Make the line full-width on hover */
 }
-
 /* Style for the "Call Now" button */
 .call-now-btn {
     position: fixed;  /* Fixes the button position relative to the screen */
@@ -166,18 +165,11 @@ nav ul li a:hover::after {
     z-index: 9999;    /* Ensures the button stays on top of other elements */
     transition: all 0.3s ease;  /* Smooth transition for all properties */
     transform: translateY(0);   /* Initial state: no translation */
-}
-
-/* Pulse effect when hovered */
-.call-now-btn:hover {
-    background-color: #e6b800;  /* Slightly darker yellow on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Larger shadow for pop effect */
-    transform: translateY(-5px); /* Moves the button up a little */
-    animation: pulse 1s infinite;  /* Pulse animation */
+    animation: pulse 1.5s infinite;  /* Continuous pulse animation */
 }
 
 /* Glowing effect */
-.call-now-btn:hover {
+.call-now-btn {
     box-shadow: 0 0 15px 5px rgba(255, 204, 51, 0.8);  /* Glowing yellow shadow */
 }
 
@@ -204,7 +196,6 @@ nav ul li a:hover::after {
 .call-now-btn:hover {
     transform: translateY(-5px) rotate(5deg);  /* Slight tilt on hover */
 }
-
 
 
 .home-content h2 {
@@ -432,6 +423,9 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
+body.menu-active .home-content {
+    padding-top: 60% /* Adjust according to the height of your menu */
+}
 
 /* Add subtle hover effect on the header */
 header:hover {
