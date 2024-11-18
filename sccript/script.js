@@ -63,21 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.toggle('menu-active');
     }
 
-    // Event listener for the hamburger menu button
+    // Event listener for the hamburger menu button (Only add it once)
     const menuButton = document.querySelector('.menu-btn');
     if (menuButton) {
         menuButton.addEventListener('click', toggleMenu);
     }
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const menu = document.getElementById('nav-links');
-        const menuButton = document.querySelector('.menu-btn');
-        if (menuButton) {
-            menuButton.addEventListener('click', function() {
-                menu.classList.toggle('show'); // Toggle the menu visibility
-                document.body.classList.toggle('menu-active'); // Optionally shift the body content
-            });
-        }
-    });
 });
