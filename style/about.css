@@ -290,6 +290,7 @@ nav ul li a:hover::after {
     background-color: rgba(0, 0, 0, 0.95); /* Dark background with slight transparency */
     color: white; /* Text color to contrast the dark background */
     gap: 2em;
+    z-index: 2; 
 }
 
 .content-3 .written {

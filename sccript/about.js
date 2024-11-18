@@ -34,4 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.remove('menu-active');
         }
     });
+
+    AOS.init({
+        duration: 2000, // Customize the animation duration
+        once: true,      // Optionally trigger the animation only once
+    });
 });
