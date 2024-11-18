@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.merriweather-light {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .merriweather-light-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .merriweather-regular-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .merriweather-bold-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .merriweather-black-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-y: auto; /* Allows vertical scrolling */
+    font-family: 'Merriweather', serif;
+    position: fixed; 
+}
+
+header {
+    background: url("../images/aboutback.webp") no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Soft shadow for a polished look */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1;
+}
+
+nav {
+    width: 100%;
+    padding: 0em 2em;
+    position: absolute;
+    top: 0;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent nav background */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+}
+
+.logo-img {
+    max-width: 100px;
+    height: auto;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 1.5em;
+    font-size: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+nav ul li a::after {
+    content: ""; /* Empty content for the line */
+    position: absolute;
+    bottom: -3px; /* Position it at the bottom of the link */
+    left: 0;
+    width: 0%; /* Initially, the width of the line is 0 */
+    height: 2px; /* Line height */
+    background-color: #ffcc33; /* Brighter underline color */
+    transition: width 0.5s ease-out; /* Smooth transition for the width */
+}
+
+nav ul li a:hover {
+    color: #ffcc33; /* Change the text color on hover */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Make the line full-width on hover */
+}
+
+/* Style for the "Call Now" button */
+.call-now-btn {
+    position: fixed;  /* Fixes the button position relative to the screen */
+    bottom: 20px;     /* 20px from the bottom */
+    right: 20px;      /* 20px from the right */
+    background-color: #ffcc33;  /* Yellow background color */
+    color: black;     /* White text */
+    border: none;     /* No border */
+    padding: 15px 30px;  /* Padding to make the button bigger */
+    font-size: 18px;  /* Font size */
+    border-radius: 5px;  /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Regular shadow */
+    cursor: pointer;  /* Cursor pointer on hover */
+    z-index: 9999;    /* Ensures the button stays on top of other elements */
+    transition: all 0.3s ease;  /* Smooth transition for all properties */
+    transform: translateY(0);   /* Initial state: no translation */
+}
+
+/* Pulse effect when hovered */
+.call-now-btn:hover {
+    background-color: #e6b800;  /* Slightly darker yellow on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Larger shadow for pop effect */
+    transform: translateY(-5px); /* Moves the button up a little */
+    animation: pulse 1s infinite;  /* Pulse animation */
+}
+
+/* Glowing effect */
+.call-now-btn:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 204, 51, 0.8);  /* Glowing yellow shadow */
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly enlarged */
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+    }
+}
+
+/* Optional: Add focus styling for accessibility */
+.call-now-btn:focus {
+    outline: none;  /* Remove the default outline */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  /* Add a focus outline */
+}
+
+/* Hover tilt effect */
+.call-now-btn:hover {
+    transform: translateY(-5px) rotate(5deg);  /* Slight tilt on hover */
+}
+
+
+
+.home-content h2 {
+    font-size: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow for better readability */
+}
+
+.home-content p {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    position: relative;
+    z-index: 2;
+    max-width: 1100px; /* Limit paragraph width for better readability */
+}
+
+.home-content p a {
+    text-decoration: none;
+    color: #ffcc33; /* Brighter color for links */
+}
+
+.content-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4em 2em;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark background with slight transparency */
+    color: white; /* Text color to contrast the dark background */
+    gap: 2em;
+}
+
+.content-2 .written {
+    flex: 1;
+    max-width: 600px; /* Limit width for better readability */
+}
+
+.content-2 .written h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: var(--hover-color); /* Accent color for headings */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Subtle shadow for the text */
+}
+
+.content-2 .written p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    text-align: justify;
+    color: #e0e0e0; /* Slightly lighter gray for readability */
+}
+
+.content-2 .teach1 {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px; /* Limit width of the image container */
+    overflow: hidden; /* Ensure the gradient overlay is contained within the div */
+}
+
+.content-2 .teach1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Regular shadow */
+}
+
+/* Dark gradient effect */
+.content-2 .teach1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 2;
+    pointer-events: none; /* Allow interaction with the image */
+}
+
+.content-3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4em 2em;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark background with slight transparency */
+    color: white; /* Text color to contrast the dark background */
+    gap: 2em;
+}
+
+.content-3 .written {
+    flex: 1;
+    max-width: 600px;
+}
+
+.content-3 .written h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: var(--hover-color);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.content-3 .written ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.content-3 .written ul li {
+    margin-bottom: 1em;
+    color: #e0e0e0;
+}
+
+.content-3 .teach2 {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.content-3 .teach2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Dark gradient effect */
+.content-3 .teach2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.content-4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4em 2em;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark background with slight transparency */
+    color: white; /* Text color to contrast the dark background */
+    gap: 2em;
+}
+
+.content-4 .written {
+    flex: 1;
+    max-width: 600px;
+}
+
+.content-4 .written h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: var(--hover-color);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.content-4 .written ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.content-4 .written ul li {
+    margin-bottom: 1em;
+    color: #e0e0e0;
+}
+
+.content-4 .teach3 {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.content-4 .teach3 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Dark gradient effect */
+.content-4 .teach3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Add subtle hover effect on the header */
+header:hover {
+    transform: scale(1.02);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(184, 74, 74, 0.8);
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    #nav-links {
+        display: none; /* Hide the links by default */
+        flex-direction: column; /* Vertical layout for mobile */
+        position: fixed; /* Fixed positioning for mobile */
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Background color */
+        padding: 1em;
+        padding-bottom: 0em;
+        box-sizing: border-box;
+        z-index: 9999; /* Ensure the menu stays above other content */
+    }
+
+    /* Show the menu when 'show' class is added */
+    #nav-links.show {
+        display: flex;
+        margin-top: 40px;
+    }
+
+    .content-2 {
+        flex-direction: column;
+        text-align: center;
+        padding: 3em 1em;
+    }
+
+    .content-2 .teach1 {
+        margin-top: 2em;
+    }
+    .content-3 {
+        flex-direction: column;
+        text-align: center;
+        padding: 3em 1em;
+    }
+
+    .content-3 .teach2 {
+        margin-top: 2em;
+    }
+    .content-4 {
+        flex-direction: column;
+        align-items: center;
+        padding: 3em 1em;
+    }
+
+    .content-4 .written {
+        order: 2; /* Moves the 'written' div below the 'teach3' div */
+        text-align: center;
+    }
+
+    .content-4 .teach3 {
+        order: 1; /* Moves the 'teach3' div above the 'written' div */
+        margin-bottom: 2em; /* Optional: Adds space between the image and text */
+    }
+}
+

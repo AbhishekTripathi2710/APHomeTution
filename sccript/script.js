@@ -1,41 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const fadeText = document.querySelector(".fade-text");
-    const text = fadeText.textContent.trim();
-    fadeText.innerHTML = ""; // Clear the content
+    // Check if we're on the Home page
+    if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+        // Type effect logic only for Home page
+        const fadeText = document.querySelector(".fade-text");
+        const text = fadeText.textContent.trim();
+        fadeText.innerHTML = ""; // Clear the content
 
-    let i = 0; // This will control the animation progress
-    let forward = true;
+        let i = 0; // This will control the animation progress
+        let forward = true;
 
-    function typeEffect() {
-        fadeText.innerHTML = "S"; // Reset the content
-        if (forward) {
-            // Type the text forward
-            for (let j = 1; j <= i; j++) {
-                const span = document.createElement("span");
-                span.textContent = text[j];
-                fadeText.appendChild(span);
-            }
-            if (i < text.length - 1) {
-                i++;
+        function typeEffect() {
+            fadeText.innerHTML = ""; // Clear the content before re-typing
+            if (forward) {
+                // Type the text forward
+                for (let j = 0; j <= i; j++) { // Start from 0
+                    const span = document.createElement("span");
+                    span.textContent = text[j];
+                    fadeText.appendChild(span);
+                }
+                if (i < text.length - 1) {
+                    i++;
+                } else {
+                    forward = false;
+                }
             } else {
-                forward = false;
-            }
-        } else {
-            for (let j = 1; j < i; j++) {
-                const span = document.createElement("span");
-                span.textContent = text[j];
-                fadeText.appendChild(span);
-            }
+                // Backward typing effect
+                for (let j = 0; j < i; j++) { // Start from 0
+                    const span = document.createElement("span");
+                    span.textContent = text[j];
+                    fadeText.appendChild(span);
+                }
 
-            if (i > 0) {
-                i--;
-            } else {
-                forward = true; 
+                if (i > 0) {
+                    i--;
+                } else {
+                    forward = true; 
+                }
             }
         }
-    }
 
-    setInterval(typeEffect, 100);
+        setInterval(typeEffect, 100);
+    }
 
     // Event listener for "Call Now" button
     document.getElementById('callNowBtn').addEventListener('click', function(event) {
@@ -63,4 +68,16 @@ document.addEventListener("DOMContentLoaded", function() {
     if (menuButton) {
         menuButton.addEventListener('click', toggleMenu);
     }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('nav-links');
+        const menuButton = document.querySelector('.menu-btn');
+        if (menuButton) {
+            menuButton.addEventListener('click', function() {
+                menu.classList.toggle('show'); // Toggle the menu visibility
+                document.body.classList.toggle('menu-active'); // Optionally shift the body content
+            });
+        }
+    });
 });
