@@ -5,6 +5,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Style the scrollbar track (the background of the scrollbar) */
+::-webkit-scrollbar {
+    width: 12px;  /* Adjust the width of the scrollbar */
+    height: 12px; /* Adjust the height of horizontal scrollbar */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #333333;  /* Dark grey for the thumb */
+    border-radius: 6px;          /* Rounded corners for a smooth look */
+    border: 2px solid #111111;   /* Subtle dark border to give depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);  /* Soft shadow for a lifted effect */
+    transition: background-color 0.3s ease;  /* Smooth color transition on hover */
+}
+
+/* Style the scrollbar track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #1a1a1a;  /* Very dark grey (almost black) for the track */
+    border-radius: 10px;   /* Rounded corners for a more refined look */
+}
+
+/* Style the scrollbar when it's hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;  /* Lighter grey for thumb on hover */
+    transition: background-color 0.3s ease;  /* Smooth color change on hover */
+}
+
+/* Style the horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+    height: 12px;  /* Adjust the height of the horizontal scrollbar */
+}
+
+/* Style the vertical scrollbar */
+::-webkit-scrollbar-vertical {
+    width: 12px;  /* Adjust the width of the vertical scrollbar */
+}
+
 .merriweather-light {
     font-family: "Merriweather", serif;
     font-weight: 300;
