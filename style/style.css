@@ -293,7 +293,7 @@ body.menu-active .home-content {
 
     /* Push content below the menu when it's visible */
     body.menu-active .home-content {
-        margin-top: 180px; /* Adjust based on your nav height + menu */
+        margin-top: 250px; /* Adjust based on your nav height + menu */
     }
 
     

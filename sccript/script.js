@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Type effect logic only for Home page
         const fadeText = document.querySelector(".fade-text");
         const text = fadeText.textContent.trim();
-        fadeText.innerHTML = ""; // Clear the content
+        fadeText.innerHTML = "B"; // Clear the content
 
         let i = 0; // This will control the animation progress
         let forward = true;
