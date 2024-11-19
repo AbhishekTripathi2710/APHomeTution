@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Event listener for "Chat on WhatsApp" button
     document.getElementById('whatsappBtn').addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = 'https://wa.me/+917307419353'; // Replace with your WhatsApp number
+        window.location.href = 'https://wa.me/+918887187998'; // Replace with your WhatsApp number
     });
 
     // Function to toggle the mobile menu
