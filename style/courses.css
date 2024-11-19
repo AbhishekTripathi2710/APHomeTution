@@ -160,14 +160,6 @@ nav {
     height: auto;
 }
 
-.menu-btn {
-    display: none;
-    font-size: 2em;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
 nav ul {
     display: flex;
@@ -272,21 +264,6 @@ nav ul li a:hover::after {
     margin-bottom: 1em;
 }
 
-/* Learn More button styling */
-.course-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 0.7em 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.course-btn:hover {
-    background-color: #ffcc33;
-}
-
 .menu-btn {
     display: none;
     font-size: 2em;
@@ -298,6 +275,11 @@ nav ul li a:hover::after {
 
 body.menu-active .home-content {
     padding-top: 60% /* Adjust according to the height of your menu */
+}
+
+header:hover {
+    transform: scale(1.02);
+    transition: transform 0.6s ease-in-out;
 }
 
 .call-now-btn {
@@ -375,6 +357,16 @@ body.menu-active .home-content {
 
     nav ul.show {
         display: flex;
+        flex-direction: column;
+        position: absolute; /* This will make it not stay fixed on scroll */
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 1em;
+        padding-bottom: 0em;
+        box-sizing: border-box;
+        z-index: 9999;
     }
 
     #nav-links {
@@ -392,8 +384,12 @@ body.menu-active .home-content {
     }
 
     .home-content h1{
-        font-size: 2.5em;
+        font-size: 2em;
     }
+    .home-content p{
+        font-size: 1em;
+    }
+
 
     /* Show the menu when 'show' class is added */
     #nav-links.show {
