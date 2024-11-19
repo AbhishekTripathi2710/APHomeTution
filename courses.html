@@ -4,21 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/courses.css">
 </head>
 <body>
     <header>
-    <nav>
-        <div class="logo">
-            <img src="./images/WhatsApp_Image_2024-11-12_at_13.56.30_910a5213-removebg-preview.png" alt="Logo">
+        <nav>
+            <div class="logo">
+                <img src="images/WhatsApp_Image_2024-11-12_at_13.56.30_910a5213-removebg-preview.png" alt="Logo" class="logo-img">
+            </div>
+            <button class="menu-btn">&#9776;</button>
+            <ul class="merriweather-regular-italic" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+            </ul>
+        </nav>
+        <div class="home-content">
+            <h1 class="fade-text merriweather-black-italic">Discover the Path to Success—Explore Our Courses!</h1>
+            <p class="merriweather-regular-italic" style="opacity: 0.8;">"Unlocking Every Student's Potential with Personalized, High-Quality Home Tutoring Tailored Just for You!" </p>
         </div>
-        <button class="menu-btn">&#9776;</button>
-        <ul class="merriweather-regular-italic" id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-        </ul>
-    </nav>
 </header>
+<button id="callNowBtn" class="call-now-btn merriweather-black-italic">Call Now</button>
+<section class="courses-section">
+    <div class="container merriweather-black-italic">
+        <h2 class="section-heading">Explore Our Courses</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <img src="images/CBSE-Class-11th-and-12th-Science-Subjects_-All-You-Need-to-Know.jpg.webp" alt="Course 1" class="course-image">
+                <div class="course-content">
+                    <h3 class="course-title">Science</h3>
+                    <p class="course-description">Comprehensive Science Coaching for Class 11 & 12, covering Physics, Chemistry, and Biology for CBSE & ICSE boards. Master complex concepts with expert guidance, interactive lessons, and personalized support to ace your exams!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="images/Mathematics-Banner.webp" alt="Course 2" class="course-image">
+                <div class="course-content">
+                    <h3 class="course-title">Mathematics</h3>
+                    <p class="course-description">Complete Mathematics Coaching for Class 11 & 12, focusing on Algebra, Calculus, Geometry, and more for CBSE & ICSE boards. Strengthen your problem-solving skills with expert guidance and personalized lessons to excel in your exams!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="images/Arts.jpeg" alt="Course 3" class="course-image">
+                <div class="course-content">
+                    <h3 class="course-title">Arts</h3>
+                    <p class="course-description">Comprehensive Humanities Coaching for Class 11 & 12, covering subjects like History, Political Science, Economics, and Geography for CBSE & ICSE boards. Get expert guidance and personalized lessons to enhance your understanding and score high in exams!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="images/Commerce-Landing-page-copy.webp" alt="Course 3" class="course-image">
+                <div class="course-content">
+                    <h3 class="course-title">Commerce</h3>
+                    <p class="course-description">Expert Commerce Coaching for Class 11 & 12, including subjects like Accountancy, Business Studies, Economics, and Mathematics for CBSE & ICSE boards. Receive personalized lessons and in-depth guidance to excel in your exams and build a strong foundation for your future!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="images/istockphoto-1410950079-612x612.jpg" alt="Course 3" class="course-image">
+                <div class="course-content">
+                    <h3 class="course-title">Nursery - Class 10</h3>
+                    <p class="course-description">We offer personalized home tuition for all subjects from Nursery to Class 10, including Science, Mathematics, English, Social Studies, and more. Our expert tutors provide tailored lessons for CBSE & ICSE boards, helping students build strong foundations and excel in their studies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="sccript/courses.js"></script>
 </body>
 </html>
