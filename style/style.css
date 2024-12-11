@@ -8,7 +8,12 @@
 
 body, html {
     height: 100%;
-    overflow: hidden; 
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    font-family: 'Merriweather', serif;
+    position: fixed;  
 }
 
   .merriweather-light {
@@ -61,7 +66,7 @@ body, html {
 
 header {
     background: url("../images/background.webp") no-repeat center center/cover; 
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,7 +75,7 @@ header {
     text-align: center;
     position: relative;
     background-attachment: fixed;
-    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 header::before {
     content: "";
@@ -79,7 +84,7 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); 
+    background: rgba(0, 0, 0, 0.7); 
     z-index: 1; 
 }
 
@@ -87,7 +92,7 @@ nav {
     width: 100%;
     padding: 1em 2em;
     position: absolute;
-    top: -40px;
+    top: -30px;
     display: flex; 
     align-items: center;
     justify-content: space-between;
@@ -103,12 +108,10 @@ nav {
 }
 
 .logo-img {
-    max-width: 100%; /* Adjust the size to your preference */
-    height: auto; /* Maintains the aspect ratio */
-    /* Optional: space between the logo and navlinks */
+    max-width: 100%; 
+    height: auto; 
 }
 
-/* Mobile Hamburger Button */
 .menu-btn {
     display: none;
     font-size: 2em;
@@ -158,14 +161,14 @@ nav ul li a:hover {
 }
 
 .home-content h1 {
-    font-size: 4em;
+    font-size: 1em;
     margin-bottom: 0.5em;
     position: relative; /* Ensures it sits above the overlay */
     z-index: 2; 
 }
 
 .home-content p{
-    font-size: 1.3em;
+    font-size: 1em;
     margin-bottom: 1em;
     position: relative;
     z-index: 2; 
@@ -220,6 +223,27 @@ nav ul li a:hover {
     transform: translateY(-5px) rotate(5deg);  /* Slight tilt on hover */
 }
 
+.call-now-btn {
+    position: fixed;  /* Fixes the button position relative to the screen */
+    bottom: 20px;     /* 20px from the bottom */
+    right: 20px;      /* 20px from the right */
+    background-color: #ffcc33;  /* Yellow background color */
+    color: black;     /* White text */
+    border: none;     /* No border */
+    padding: 15px 30px;  /* Padding to make the button bigger */
+    font-size: 15px;  /* Font size */
+    border-radius: 5px;  /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Regular shadow */
+    cursor: pointer;  /* Cursor pointer on hover */
+    z-index: 9999;    /* Ensures the button stays on top of other elements */
+    transition: all 0.3s ease;  /* Smooth transition for all properties */
+    transform: translateY(0);   /* Initial state: no translation */
+    animation: pulse 1.5s infinite;  /* Continuous pulse animation */
+}
+
+.call-now-btn {
+    box-shadow: 0 0 15px 5px rgba(255, 204, 51, 0.8);  /* Glowing yellow shadow */
+}
 
 #nav-links {
     display: flex; /* Display the nav links in a row for desktop */
@@ -241,7 +265,84 @@ body.menu-active .home-content {
     transition: margin-top 0.3s ease;
 }
 
+.content-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4em 2em;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark background with slight transparency */
+    color: white; /* Text color to contrast the dark background */
+    gap: 2em;
+}
 
+.content-2 .written {
+    flex: 1;
+    max-width: 600px; /* Limit width for better readability */
+}
+
+.content-2 .written h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: var(--hover-color); /* Accent color for headings */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Subtle shadow for the text */
+}
+
+.content-2 .written p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    text-align: justify;
+    color: #e0e0e0; /* Slightly lighter gray for readability */
+}
+
+.contact {
+    background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent dark background */
+    color: white; /* White text for better contrast */
+    padding: 2em; /* Add some padding for spacing */
+    text-align: left; /* Align text to the left for consistency */
+    font-size: 1.2em;
+    list-style: none; /* Remove default list styling */
+    
+}
+
+.contact h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    margin-bottom: 0.3em; /* Spacing below the heading */
+    color: #ffcc33; /* Accent color for the heading */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Subtle shadow for the heading */
+    margin-left: 100px;
+}
+
+.contact p {
+    margin: 0.3em 0; /* Adjust spacing between the lines */
+    line-height: 1.6; /* Space out the lines a bit */
+    opacity: 0.8; /* Slightly reduce opacity for a softer look */
+    display: flex; /* Use flexbox to align image and text */
+    align-items: center; /* Align icon and text vertically */
+    margin-left: 100px;
+}
+
+.contact p:hover {
+    color: #ffcc33; 
+    transition: color 0.3s ease;
+}
+
+.contact img {
+    width: 22px;
+    height: 22px; /* Consistent height for icons */
+    margin-right: 0.8em; /* More spacing between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact ul {
+    padding-left: 0; /* Remove default padding */
+}
+
+.contact li {
+    display: flex; /* Use flexbox to align content */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 0.3em; /* Space between list items */
+}
 
 @media (max-width: 768px) {
     .menu-btn {
@@ -272,11 +373,15 @@ body.menu-active .home-content {
         font-size: 1.2rem;
     }
 
+    nav ul.show {
+        display: flex;
+    }
+
     #nav-links {
         display: none; /* Hide the links by default */
         flex-direction: column; /* Vertical layout for mobile */
-        position: fixed; /* Fixed positioning for mobile */
-        top: 30px; /* Adjust based on your header height */
+        position: absolute;
+        top: 70px; /* Adjust based on your header height */
         left: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9); /* Background color */
@@ -291,10 +396,22 @@ body.menu-active .home-content {
         margin-top: 50px;
     }
 
-    /* Push content below the menu when it's visible */
-    body.menu-active .home-content {
-        margin-top: 250px; /* Adjust based on your nav height + menu */
+    .content-2 {
+        flex-direction: column;
+        text-align: center;
+        padding: 3em 1em;
     }
 
-    
+    .contact h2{
+        margin-left: 0;
+    }
+
+    .contact p{
+        margin-left: 0;
+    }
+
+    /* Push content below the menu when it's visible */
+    body.menu-active .home-content {
+        margin-top: 280px; /* Adjust based on your nav height + menu */
+    }
 }

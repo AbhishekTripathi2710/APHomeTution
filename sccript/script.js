@@ -55,12 +55,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Function to toggle the mobile menu
-    function toggleMenu() {
+    function toggleMenu(event) {
         const menu = document.getElementById('nav-links');
         menu.classList.toggle('show'); // Toggle the visibility of the menu
 
         // Toggle the body class that shifts content below the menu
         document.body.classList.toggle('menu-active');
+        
+        // Prevent the event from propagating to the document click listener
+        event.stopPropagation();
     }
 
     // Event listener for the hamburger menu button (Only add it once)
@@ -68,6 +71,17 @@ document.addEventListener("DOMContentLoaded", function() {
     if (menuButton) {
         menuButton.addEventListener('click', toggleMenu);
     }
+
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('nav-links');
+        const menuButton = document.querySelector('.menu-btn');
+        
+        // If the clicked element is neither the menu nor the menu button, close the menu
+        if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+            menu.classList.remove('show');
+            document.body.classList.remove('menu-active');
+        }
+    });
 
 });
 
