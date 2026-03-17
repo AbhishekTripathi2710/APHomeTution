@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Phone number click functionality
     document.getElementById('callNowBtn').addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = 'tel:+918887187998';  // Replace with your phone number
+        window.location.href = 'tel:+919336379939';  // Replace with your phone number
     });
 
     // Function to toggle the mobile menu
